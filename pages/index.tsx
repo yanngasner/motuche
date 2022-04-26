@@ -1,10 +1,10 @@
 import React from "react"
-import { GetStaticProps } from "next"
+import { GetServerSideProps } from "next"
 import Layout from "../components/Layout"
 import User, { UserProps } from "../components/User"
 import prisma from "../lib/prisma";
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getServerSideProps: GetServerSideProps = async () => {
   const feed = await prisma.user.findMany({
     select: {
       email: true,
