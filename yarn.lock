@@ -2,15 +2,32 @@
 # yarn lockfile v1
 
 
-"@next/env@12.0.10":
-  "integrity" "sha512-mQVj0K6wQ5WEk/sL9SZ+mJXJUaG7el8CpZ6io1uFe9GgNTSC7EgUyNGqM6IQovIFc5ukF4O/hqsdh3S/DCgT2g=="
-  "resolved" "https://registry.npmjs.org/@next/env/-/env-12.0.10.tgz"
-  "version" "12.0.10"
+"@next/env@12.1.5":
+  "integrity" "sha512-+34yUJslfJi7Lyx6ELuN8nWcOzi27izfYnZIC1Dqv7kmmfiBVxgzR3BXhlvEMTKC2IRJhXVs2FkMY+buQe3k7Q=="
+  "resolved" "https://registry.npmjs.org/@next/env/-/env-12.1.5.tgz"
+  "version" "12.1.5"
 
-"@next/swc-win32-x64-msvc@12.0.10":
-  "integrity" "sha512-oUIWRKd24jFLRWUYO1CZmML5+32BcpVfqhimGaaZIXcOkfQW+iqiAzdqsv688zaGtyKGeB9ZtiK3NDf+Q0v+Vw=="
-  "resolved" "https://registry.npmjs.org/@next/swc-win32-x64-msvc/-/swc-win32-x64-msvc-12.0.10.tgz"
-  "version" "12.0.10"
+"@next/swc-win32-x64-msvc@12.1.5":
+  "integrity" "sha512-/SoXW1Ntpmpw3AXAzfDRaQidnd8kbZ2oSni8u5z0yw6t4RwJvmdZy1eOaAADRThWKV+2oU90++LSnXJIwBRWYQ=="
+  "resolved" "https://registry.npmjs.org/@next/swc-win32-x64-msvc/-/swc-win32-x64-msvc-12.1.5.tgz"
+  "version" "12.1.5"
+
+"@prisma/client@^3.12.0":
+  "integrity" "sha512-4NEQjUcWja/NVBvfuDFscWSk1/rXg3+wj+TSkqXCb1tKlx/bsUE00rxsvOvGg7VZ6lw1JFpGkwjwmsOIc4zvQw=="
+  "resolved" "https://registry.npmjs.org/@prisma/client/-/client-3.12.0.tgz"
+  "version" "3.12.0"
+  dependencies:
+    "@prisma/engines-version" "3.12.0-37.22b822189f46ef0dc5c5b503368d1bee01213980"
+
+"@prisma/engines-version@3.12.0-37.22b822189f46ef0dc5c5b503368d1bee01213980":
+  "integrity" "sha512-o+jo8d7ZEiVpcpNWUDh3fj2uPQpBxl79XE9ih9nkogJbhw6P33274SHnqheedZ7PyvPIK/mvU8MLNYgetgXPYw=="
+  "resolved" "https://registry.npmjs.org/@prisma/engines-version/-/engines-version-3.12.0-37.22b822189f46ef0dc5c5b503368d1bee01213980.tgz"
+  "version" "3.12.0-37.22b822189f46ef0dc5c5b503368d1bee01213980"
+
+"@prisma/engines@3.12.0-37.22b822189f46ef0dc5c5b503368d1bee01213980":
+  "integrity" "sha512-zULjkN8yhzS7B3yeEz4aIym4E2w1ChrV12i14pht3ePFufvsAvBSoZ+tuXMvfSoNTgBS5E4bolRzLbMmbwkkMQ=="
+  "resolved" "https://registry.npmjs.org/@prisma/engines/-/engines-3.12.0-37.22b822189f46ef0dc5c5b503368d1bee01213980.tgz"
+  "version" "3.12.0-37.22b822189f46ef0dc5c5b503368d1bee01213980"
 
 "@types/debug@^4.0.0":
   "integrity" "sha512-9AonUzyTjXXhEOa0DnqpzZi6VHlqKMswga9EXjpXnnqxwLtdvPPtlO8evrI5D9S6asFRCQ6v+wpiUKbw+vKqyg=="
@@ -426,28 +443,28 @@
   "resolved" "https://registry.npmjs.org/nanoid/-/nanoid-3.2.0.tgz"
   "version" "3.2.0"
 
-"next@12.0.10":
-  "integrity" "sha512-1y3PpGzpb/EZzz1jgne+JfZXKAVJUjYXwxzrADf/LWN+8yi9o79vMLXpW3mevvCHkEF2sBnIdjzNn16TJrINUw=="
-  "resolved" "https://registry.npmjs.org/next/-/next-12.0.10.tgz"
-  "version" "12.0.10"
+"next@^12.1.5":
+  "integrity" "sha512-YGHDpyfgCfnT5GZObsKepmRnne7Kzp7nGrac07dikhutWQug7hHg85/+sPJ4ZW5Q2pDkb+n0FnmLkmd44htIJQ=="
+  "resolved" "https://registry.npmjs.org/next/-/next-12.1.5.tgz"
+  "version" "12.1.5"
   dependencies:
-    "@next/env" "12.0.10"
+    "@next/env" "12.1.5"
     "caniuse-lite" "^1.0.30001283"
     "postcss" "8.4.5"
-    "styled-jsx" "5.0.0"
-    "use-subscription" "1.5.1"
+    "styled-jsx" "5.0.1"
   optionalDependencies:
-    "@next/swc-android-arm64" "12.0.10"
-    "@next/swc-darwin-arm64" "12.0.10"
-    "@next/swc-darwin-x64" "12.0.10"
-    "@next/swc-linux-arm-gnueabihf" "12.0.10"
-    "@next/swc-linux-arm64-gnu" "12.0.10"
-    "@next/swc-linux-arm64-musl" "12.0.10"
-    "@next/swc-linux-x64-gnu" "12.0.10"
-    "@next/swc-linux-x64-musl" "12.0.10"
-    "@next/swc-win32-arm64-msvc" "12.0.10"
-    "@next/swc-win32-ia32-msvc" "12.0.10"
-    "@next/swc-win32-x64-msvc" "12.0.10"
+    "@next/swc-android-arm-eabi" "12.1.5"
+    "@next/swc-android-arm64" "12.1.5"
+    "@next/swc-darwin-arm64" "12.1.5"
+    "@next/swc-darwin-x64" "12.1.5"
+    "@next/swc-linux-arm-gnueabihf" "12.1.5"
+    "@next/swc-linux-arm64-gnu" "12.1.5"
+    "@next/swc-linux-arm64-musl" "12.1.5"
+    "@next/swc-linux-x64-gnu" "12.1.5"
+    "@next/swc-linux-x64-musl" "12.1.5"
+    "@next/swc-win32-arm64-msvc" "12.1.5"
+    "@next/swc-win32-ia32-msvc" "12.1.5"
+    "@next/swc-win32-x64-msvc" "12.1.5"
 
 "object-assign@^4.1.1":
   "integrity" "sha1-IQmtx5ZYh8/AXLvUQsrIv7s2CGM="
@@ -467,6 +484,13 @@
     "nanoid" "^3.1.30"
     "picocolors" "^1.0.0"
     "source-map-js" "^1.0.1"
+
+"prisma@*", "prisma@^3.12.0":
+  "integrity" "sha512-ltCMZAx1i0i9xuPM692Srj8McC665h6E5RqJom999sjtVSccHSD8Z+HSdBN2183h9PJKvC5dapkn78dd0NWMBg=="
+  "resolved" "https://registry.npmjs.org/prisma/-/prisma-3.12.0.tgz"
+  "version" "3.12.0"
+  dependencies:
+    "@prisma/engines" "3.12.0-37.22b822189f46ef0dc5c5b503368d1bee01213980"
 
 "prop-types@^15.0.0":
   "integrity" "sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg=="
@@ -521,7 +545,7 @@
     "unist-util-visit" "^4.0.0"
     "vfile" "^5.0.0"
 
-"react@^16.8.0 || ^17.0.0", "react@^17.0.2 || ^18.0.0-0", "react@>= 16.8.0 || 17.x.x || 18.x.x", "react@>=16", "react@17.0.2":
+"react@^17.0.2 || ^18.0.0-0", "react@>= 16.8.0 || 17.x.x || ^18.0.0-0", "react@>=16", "react@17.0.2":
   "integrity" "sha512-gnhPt75i/dq/z3/6q/0asP78D0u592D5L1pd7M8P+dck6Fu/jJeL6iVVK23fptSUZj8Vjf++7wXA8UNclGQcbA=="
   "resolved" "https://registry.npmjs.org/react/-/react-17.0.2.tgz"
   "version" "17.0.2"
@@ -580,10 +604,10 @@
   dependencies:
     "inline-style-parser" "0.1.1"
 
-"styled-jsx@5.0.0":
-  "integrity" "sha512-qUqsWoBquEdERe10EW8vLp3jT25s/ssG1/qX5gZ4wu15OZpmSMFI2v+fWlRhLfykA5rFtlJ1ME8A8pm/peV4WA=="
-  "resolved" "https://registry.npmjs.org/styled-jsx/-/styled-jsx-5.0.0.tgz"
-  "version" "5.0.0"
+"styled-jsx@5.0.1":
+  "integrity" "sha512-+PIZ/6Uk40mphiQJJI1202b+/dYeTVd9ZnMPR80pgiWbjIwvN2zIp4r9et0BgqBuShh48I0gttPlAXA7WVvBxw=="
+  "resolved" "https://registry.npmjs.org/styled-jsx/-/styled-jsx-5.0.1.tgz"
+  "version" "5.0.1"
 
 "trough@^2.0.0":
   "integrity" "sha512-FnHq5sTMxC0sk957wHDzRnemFnNBvt/gSY99HzK8F7UP5WAbvP70yX5bd7CjEQkN+TjdxwI7g7lJ6podqrG2/w=="
@@ -670,13 +694,6 @@
     "@types/unist" "^2.0.0"
     "unist-util-is" "^5.0.0"
     "unist-util-visit-parents" "^5.0.0"
-
-"use-subscription@1.5.1":
-  "integrity" "sha512-Xv2a1P/yReAjAbhylMfFplFKj9GssgTwN7RlcTxBujFQcloStWNDQdc4g4NRWH9xS4i/FDk04vQBptAXoF3VcA=="
-  "resolved" "https://registry.npmjs.org/use-subscription/-/use-subscription-1.5.1.tgz"
-  "version" "1.5.1"
-  dependencies:
-    "object-assign" "^4.1.1"
 
 "uvu@^0.5.0":
   "integrity" "sha512-brFwqA3FXzilmtnIyJ+CxdkInkY/i4ErvP7uV0DnUVxQcQ55reuHphorpF+tZoVHK2MniZ/VJzI7zJQoc9T9Yw=="
