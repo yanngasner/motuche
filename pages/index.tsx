@@ -1,49 +1,54 @@
 import React from "react"
 import { GetStaticProps } from "next"
 import Layout from "../components/Layout"
-import Post, { PostProps } from "../components/Post"
+import User, { UserProps } from "../components/User"
 import prisma from "../lib/prisma";
 
 export const getStaticProps: GetStaticProps = async () => {
-  const feed = await prisma.post.findMany({
-    where: { published: true },
-    include: {
-      author: {
-        select: { name: true },
+  const feed = await prisma.user.findMany({
+    select: {
+      email: true,
+      name: true,
+      id: true,
+      words: {
+        select: {
+          id: true,
+          word: true
+        }
       },
     },
   });
-  return { props: { feed } };
+  return { props: {feed}};
 };
 
 type Props = {
-  feed: PostProps[]
+  feed: UserProps[]
 }
 
-const Blog: React.FC<Props> = (props) => {
+const UserList: React.FC<Props> = (props) => {
   return (
     <Layout>
       <div className="page">
         <h1>Public Feed</h1>
         <main>
-          {props.feed.map((post) => (
-            <div key={post.id} className="post">
-              <Post post={post} />
+          {props.feed.map((user) => (
+            <div key={user.id} className="user">
+              <User user={user} />
             </div>
           ))}
         </main>
       </div>
       <style jsx>{`
-        .post {
+        .user {
           background: white;
           transition: box-shadow 0.1s ease-in;
         }
 
-        .post:hover {
+        .user:hover {
           box-shadow: 1px 1px 3px #aaa;
         }
 
-        .post + .post {
+        .user + .user {
           margin-top: 2rem;
         }
       `}</style>
@@ -51,4 +56,4 @@ const Blog: React.FC<Props> = (props) => {
   )
 }
 
-export default Blog
+export default UserList

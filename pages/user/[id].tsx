@@ -2,37 +2,40 @@ import React from "react"
 import { GetServerSideProps } from "next"
 import ReactMarkdown from "react-markdown"
 import Layout from "../../components/Layout"
-import { PostProps } from "../../components/Post"
+import { UserProps } from "../../components/User"
 import prisma from '../../lib/prisma';
 
 export const getServerSideProps: GetServerSideProps = async ({ params }) => {
-  const post = await prisma.post.findUnique({
+  const user = await prisma.user.findUnique({
     where: {
       id: String(params?.id),
     },
-    include: {
-      author: {
-        select: { name: true },
+    select: {
+      email: true,
+      name: true,
+      id: true,
+      words: {
+        select: {
+          id: true,
+          word: true
+        }
       },
     },
   });
   return {
-    props: post,
+    props: user,
   };
 };
 
-const Post: React.FC<PostProps> = (props) => {
-  let title = props.title
-  if (!props.published) {
-    title = `${title} (Draft)`
-  }
-
+const User: React.FC<UserProps> = (props) => {
+  console.log(props?.children)
   return (
     <Layout>
       <div>
-        <h2>{title}</h2>
-        <p>By {props?.author?.name || "Unknown author"}</p>
-        <ReactMarkdown children={props.content} />
+      <h2>Name : {props?.name}</h2>
+      <p>Email : {props?.email}</p>
+      <p>Id : {props?.id}</p>
+      <p>Words : {props?.words.map(w => w.word).join(',')}</p>
       </div>
       <style jsx>{`
         .page {
@@ -59,4 +62,4 @@ const Post: React.FC<PostProps> = (props) => {
   )
 }
 
-export default Post
+export default User
