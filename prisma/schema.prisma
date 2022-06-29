@@ -44,16 +44,17 @@ model Session {
 }
 
 model User {
-  id            String    @id @default(cuid())
+  id            String      @id @default(cuid())
   name          String?
-  email         String?   @unique
-  emailVerified DateTime? @map("email_verified")
+  email         String?     @unique
+  emailVerified DateTime?   @map("email_verified")
   image         String?
-  createdAt     DateTime  @default(now()) @map(name: "created_at")
-  updatedAt     DateTime  @updatedAt @map(name: "updated_at")
-  words         Word[]
+  createdAt     DateTime    @default(now()) @map(name: "created_at")
+  updatedAt     DateTime    @updatedAt @map(name: "updated_at")
+  games         Game[]
   accounts      Account[]
   sessions      Session[]
+  userGroups    UserGroup[]
 
   @@map(name: "users")
 }
@@ -67,10 +68,19 @@ model VerificationToken {
   @@map("verificationtokens")
 }
 
-model Word {
+model Game {
+  id          String     @id @default(cuid())
+  word        String
+  createdAt   DateTime   @default(now()) @map(name: "created_at")
+  author      User?      @relation(fields: [authorId], references: [id])
+  authorId    String?
+  userGroup   UserGroup? @relation(fields: [userGroupId], references: [id])
+  userGroupId String?
+}
+
+model UserGroup {
   id        String   @id @default(cuid())
-  word      String
   createdAt DateTime @default(now()) @map(name: "created_at")
-  author    User?    @relation(fields: [authorId], references: [id])
-  authorId  String?
+  users     User[]
+  games     Game[]
 }
