@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import { GetServerSideProps } from "next"
 import ReactMarkdown from "react-markdown"
 import Layout from "../../components/Layout"
@@ -28,7 +28,13 @@ export const getServerSideProps: GetServerSideProps = async ({ params }) => {
 };
 
 const User: React.FC<UserProps> = (props) => {
-  console.log(props?.children)
+  const [word, setWord] = useState('');
+  const onClick = async () => {
+    const response = await fetch('/api/words')
+    console.log('response', response);
+    const data = await response.json();
+    setWord(JSON.stringify(data));  
+  }
   return (
     <Layout>
       <div>
@@ -36,6 +42,9 @@ const User: React.FC<UserProps> = (props) => {
       <p>Email : {props?.email}</p>
       <p>Id : {props?.id}</p>
       <p>Words : {props?.words.map(w => w.word).join(',')}</p>
+      <button onClick={onClick}>
+      <p>{word}</p>
+      </button>
       </div>
       <style jsx>{`
         .page {
